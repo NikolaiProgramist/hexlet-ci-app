@@ -1,0 +1,23 @@
+name: hexlet-ci-app
+
+on: push
+
+jobs:
+
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - run: make setup
+
+  test:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - run: make test
+
+  lint:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - run: make lint
