@@ -12,12 +12,14 @@ jobs:
 
   test:
     runs-on: ubuntu-22.04
+    needs: [build]
 
     steps:
       - run: make test
 
   lint:
     runs-on: ubuntu-22.04
+    needs: [build]
 
     steps:
       - run: make lint
