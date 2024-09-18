@@ -8,18 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - uses: actions/checkout@v4
       - run: make setup
-
-  test:
-    runs-on: ubuntu-22.04
-    needs: [build]
-
-    steps:
-      - run: make test
-
-  lint:
-    runs-on: ubuntu-22.04
-    needs: [build]
-
-    steps:
       - run: make lint
+      - run: make test
